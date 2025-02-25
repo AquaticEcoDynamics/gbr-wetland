@@ -1,0 +1,45 @@
+!-----------------------------------------------------------
+! plots_window defines the size of the window used for
+! display of the plots
+!-----------------------------------------------------------
+
+&plots_window
+  width = 2000
+  height=  200
+/
+
+!-----------------------------------------------------------
+! plots
+!  nplots - the number of plots
+!  title  - list of titles, one for each plot
+!  min_z  - list of minimum values for the z component
+!  max_z  - list of maximum values for the z component
+!
+! For the moment really only the min/max values are worth
+! tinkering with
+!-----------------------------------------------------------
+&plots
+  nplots = 12
+  plot_width = 320
+  plot_height = 160
+
+! These might not work in windows version if the fonts aren't installed
+! title_font = 'times:bold'
+! title_size = 12
+! label_font = 'helvetica'
+! label_size =  10
+
+  title = 'Temperature', 'Salinity (ppt)', 'Dissolved Oxygen (mmol/m3)', 'Total Nitrogen (mmol/m3)',
+           'Nitrate (mmol/m3)', 'ammonium (mmol/m3)', 'Total phosphorus (mmol/m3)', ' Phosphate (mmol P/m3)',
+		   'total chlorophyll-a (ug/L)', 'Greens (mmol C/m3)', 'cyanobacteria (mmol C/m3)', 'Diatoms (mmol/C/m3)'
+  vars  = 'temp','salt', 'OXY_oxy', 'TOT_tn',
+          'NIT_nit', 'NIT_amm', 'TOT_tp', 'PHS_frp',
+		  'PHY_tchla', 'PHY_green', 'PHY_cyano', 'PHY_diatom'
+  min_z =   10.0, 0.0, 0.0, 0.0, 
+             0.0, 0.0, 0.0, 0.0, 
+			 0.0, 0.0, 0.0, 0.0
+  max_z =  40.0, 1.0, 400.0, 200,
+           150, 50.0, 15.0, 10.0, 
+		   100.0, 150.0, 200.0, 100.0 
+
+/
